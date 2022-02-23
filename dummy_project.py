@@ -24,5 +24,4 @@ group_labels = ['Sample 1', 'Sample 2']
 fig = ff.create_distplot(hist_data, group_labels, bin_size=1.)
 fig.update_traces(nbinsx=20, autobinx=True, selector={'type': 'histogram'}, marker_line_width=1)
 
-
 st.plotly_chart(fig, use_container_width=True)
