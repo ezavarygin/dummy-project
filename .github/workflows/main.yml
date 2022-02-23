@@ -24,12 +24,6 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
-      - name: pwd
-        run: pwd
-        
-      - name: ls
-        run: ls
       
       - name: Print pip version
         run: pip --version
@@ -39,7 +33,11 @@ jobs:
 
       - name: Install packages from requirements.txt
         run: pip install -r requirements.txt
-        
+
+      - name: Upgrade protobuf
+        # Fixing this issue: https://stackoverflow.com/questions/61922334
+        run: pip install --upgrade protobuf
+
       - name: Run unit tests
         run: pytest tests/
         
