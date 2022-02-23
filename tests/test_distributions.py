@@ -38,4 +38,4 @@ class TestClippedNormalSample:
 
         k2, p = normaltest(result)
 
-        assert p > 0.05, f'Normality test failed: p = {p}!'
+        assert p > 0.01, f'Normality test failed: p = {p}!'
